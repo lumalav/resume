@@ -1,0 +1,850 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr" mozdisallowselectionprint moznomarginboxes>
+  <head>
+	<!-- 
+	****************************************
+	Hi! welcome to my eBay-style resume.
+	For the creation of this Website, I used
+	the following technology:
+	
+	1)Bootstrap
+	2)JavaScript
+	3)PDF.JS by Mozilla
+	
+	Luis Lavieri
+	****************************************
+	-->
+	
+	<title>Luis' Awesome Resume</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Hi! Welcome to my eBay-style resume!">
+	<meta property="og:description" content="Hi! Welcome to my eBay-style resume!">
+	<meta property="og:title" content="Luis' Awesome Resume" >
+	<meta property="og:image" content="http://luislavieri.com/logo.png" > <!-- Change it -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="handheld.css" type="text/css" media="handheld">
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<link rel="stylesheet" href="viewer.css"/>
+	
+    <script type="text/javascript" src="compatibility.js"></script>
+	<!-- This snippet is used in production, see Makefile -->
+	<link rel="resource" type="application/l10n" href="locale/locale.properties"/>
+	<script type="text/javascript" src="l10n.js"></script>
+	<script type="text/javascript" src="pdf.js"></script>
+	<script type="text/javascript" src="debugger.js"></script>
+    <script type="text/javascript" src="viewer.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "6f953289-9814-473a-ae2a-87b2879bbe03", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+	
+</head>
+  <body>
+    <div id="wrapper">
+		<div id="header" >
+		<span id="signIn">Hi, <strong>Company<ul id="arrowSignIn"></ul></strong>!</span>
+		<a id="deals" href="#">Daily Deals</a>
+		<a id="myLuis" href="#">My lUis</a>
+		<a id="sell" href="#">Sell</a>
+		<a id="community" href="#">Community</a>
+		<a id="support" href="#">Customer Support</a>
+		<a id="cart" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false""><img id="cartIcon" src="cartIcon.png" alt="">Cart</a>
+		</div>
+    	<div id="search">
+			<div id="links">
+				<a id="logo" href="http://www.luislavieri.com/"><img src="logo.png" alt=""></a>
+				<div id= "categories"><a id="category" href="#">Shop by category</a></div>
+				<a href="http://www.luislavieri.com/"><ul id="arrowCategory"></ul></a>
+			</div>
+			<div id="appender" class="input-append">
+				<input id="searchBar" type="text">
+				<select id="allCategories">
+					<option class="options">All Categories</option>
+					<option class="options">Antiques</option>
+					<option class="options">Art</option>
+					<option class="options">Baby</option>
+					<option class="options">Books</option>
+					<option class="options">Business & Industrial</option>
+					<option class="options">Cameras & Photo</option>
+					<option class="options">Cell Phones & Accesories</option>
+					<option class="options">Clothing, Shoes & Accesories</option>
+					<option class="options">Coins & Paper Money</option>
+					<option class="options">Collectibles</option>
+					<option class="options">Computer/Tablets & Networking</option>
+					<option class="options">Consumer Electronics</option>
+					<option class="options">Crafts</option>
+					<option class="options">Dolls & Bears</option>
+					<option class="options">DVDS & Movies</option>
+					<option class="options">lUis Motors</option>
+					<option class="options">Entertainment Memorabilia</option>
+					<option class="options">Gift Cards & Coupons</option>
+					<option class="options">Health & Beauty</option>
+					<option class="options">Home & Garden</option>
+					<option class="options">Jewelry & Watches</option>
+					<option class="options">Job Candidates</option>
+					<option class="options">Music</option>
+					<option class="options">Musical Instruments & Gear</option>
+					<option class="options">Pet Supplies</option>
+					<option class="options">Pottery & Glass</option>
+					<option class="options">Real Estate</option>
+					<option class="options">Specialty Services</option>
+					<option class="options">Sporting Goods</option>
+					<option class="options">Sports Mem, Cards & Fan Shop</option>
+					<option class="options">Stamps</option>
+					<option class="options">Tickets</option>
+					<option class="options">Toys & Hobbies</option>
+					<option class="options">Travel</option>
+					<option class="options">Video Games & Consoles</option>
+					<option class="options">Everything Else</option>
+				</select>
+			</div>
+			<a id="searchButton" href="#">Search</a>
+			<a id="advanced" href="#">Advanced</a>
+			<div id="alert1" class="alert" style="position:absolute; width: 25em; left:91.3em; top:7em; visibility:hidden;">
+				<strong>Warning!</strong> You shouldn't be looking for someone else.
+			</div>
+			<div id="alert2" class="alert alert-block alert-error fade in" style="position:absolute; width: 25em; left:91.3em; top:7em; visibility:hidden;">
+				<strong>Really?</strong> What were you expecting?
+			</div>
+			
+		</div>
+		<div id="root" style="width:112.3em; position:absolute;">
+		<a id="backArrow" href="http://www.luislavieri.com/"><img src="backArrow.gif" alt=""></a>
+		<a id="backText" href="http://www.luislavieri.com/">Back to home page</a>
+		<span id="listed">Listed as <a style="color:#002398;" href="#">Luis Lavieri - 
+			Software Developer</a> in category:  &nbsp;<a style="color:#002398;" href="#">Job Candidates</a>&nbsp;  >&nbsp; 
+			<a style="color:#002398;" href="#">
+			Awesome Job Candidates</a>
+		</span>
+		</div>
+		<div id="product">
+			<div id="myCarousel" class="carousel slide">
+				<img style="position:absolute; margin-left: 32.4em; margin-top:-0.3em;"alt=""src="free.png">
+			<!-- Carousel items -->
+			<div class="carousel-inner">
+				<div class="active item"><img style="padding-top:0.4em;margin-left:4.8em;" src="profilePic1.png" alt=""></div>
+				<div class="item"><img style="padding-top:8em;margin-left:4.8em;" src="profilePic2.png" alt=""></div>
+				<div class="item"><img style="padding-top:8em;margin-left:4.8em;" src="profilePic3.png" alt=""></div>
+				<div class="item"><img style="width:25.3em; padding-top:9.5em;margin-left:4.8em;" src="profilePic4.png" alt=""></div>
+			</div>
+			<!-- Carousel nav -->
+				<a style="top:4.2em;" class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				<a style="top:4.2em;" class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+			</div>
+			<span style="margin-left:43em; top:55%;font-family:Verdana; font-size:10px;color:#80809E">Click image to scroll</span>
+			<ul class="thumbnails" style="padding-bottom:0.1em;margin-left:15.85em;margin-top:1.1em; border-bottom:1px dotted #DDDDDD; width:26.3%; height: 7.2em;">
+				<li class="span4" id="thumb1">
+				<a  class="thumbnail" style="width:3.55em; margin-left:-1.4em;" >
+				<img alt="" data-src="holder.js/300x200" src="profilePic1.png">
+				</a>
+				</li>
+				<li class="span4" id="thumb2" style="width: 3em; margin-left:-18em;">
+				<a  class="thumbnail" style="width:6.3em; ">
+				<img alt="" data-src="holder.js/300x200" src="profilePic2.png">
+				</a>
+				</li>
+				<li class="span4" id="thumb3" style="width: 3em; margin-left:-10.3em;">
+				<a  class="thumbnail" style="width:6.3em; ">
+				<img alt="" data-src="holder.js/300x200" src="profilePic3.png">
+				</a>
+				</li>
+				<li class="span4" id="thumb4" style="width: 3em; margin-left:-2.5em;">
+				<a  class="thumbnail" style="width:7em; ">
+				<img alt="" data-src="holder.js/300x200" src="profilePic4.png">
+				</a>
+				</li>
+			</ul>
+			<div id="social" style="position:absolute; top:13.6em; left:100.7em; width:20em;">
+				<span class='st_email'></span>
+				<span class='st_facebook'></span>
+				<span class='st_twitter'></span>
+				<span class='st_pinterest'></span>
+				<span class='st_linkedin'></span>
+				<span class='st_reddit'></span>
+			
+				<span ><a style="padding-left:0.5em; color:#1958BD; border-left:1px solid black;" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false">Add to Watch list</a></span>
+			</div>
+			<div id="productTitle">
+				Luis Lavieri - Software Developer
+				<a id="like" href="#" data-toggle="popover" data-placement="bottom" data-content="Awww, I like you too!"><img src="like.png" alt=""></a>
+				<a id="want" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false"><img src="want.png" alt=""></a>
+				<a id="own" href="#" data-toggle="popover" data-placement="bottom" data-content="I am available! What are you waiting for?"><img src="own.png" alt=""></a>
+			</div>
+			
+			<div id="itemCondition">
+			<a style="border:1px solid black;  margin-top:0em; position:absolute; margin-left:36.8em; width:6em;" href="http://www.luislavieri.com/foodbuilder" role="button" class="btn btn-info" data-toggle="modal">New App!</a>
+				<a style="border:1px solid black;  margin-top:2em; position:absolute; margin-left:36.8em; width:6em;" href="#myModal" role="button" class="btn btn-warning" data-toggle="modal">More info</a>
+				
+				
+				<span style="padding-left:3.6em; color: #666666;">Item condition: </span><strong style="padding-left:0.5em;">Brand New</strong>
+				<p style="padding-left: 6.1em; padding-top: 0.5em; color: #666666;" >Time left: <span id='product_count_down' style="padding-left:0.4em; color:#555555"></span>
+
+				<script src="countdown.js" type="text/javascript" charset="utf-8"></script>
+				<span style="font-family:Verdana; font-size:10px; color:#555555">(Jun 03, 2016  13:47:00 EST)</span></p>
+			</div>
+			<div id="itemPrice">
+				<span style="color: #666666; padding-left:7.6em; " >Price: <strike style="padding-left:0.4em; font-family:Trebuchet MS; font-size:16px; color:black; font-weight:700;">US $999.99</strike></span>
+				<a style="text-decoration:none; color:white;" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false"><button class="btn btn-primary" type="button" style="font-family:Trebuchet MS; font-size:15px; font-weight:700; position:absolute; margin-left:6.5em;">Buy It Now</button></a>
+				<a style="text-decoration:none; color:white;" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false"><button class="btn btn-primary" type="button" style="font-family:Trebuchet MS; font-size:15px; font-weight:700; position:absolute; margin-left:6.5em; margin-top:2.8em;">Add to cart<img style="margin-left:0.4em; margin-top:-0.2em;" src="cartWhite.png" alt=""></button></a>
+				<a href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false"><ul id="watchList"></ul></a>
+			</div>
+			<div id="contact">
+				<span style="position: absolute; top:0.4em; left:3.4em;">Hire Him! and earn 2% back on this item. <a alt="" href="#" style="font-family:Verdana; font-size:10px; color:#1958BD;">See Conditions</a></span>
+				<strong style="position:absolute; top:2.5em; left: 6.8em;">New customers get $10 back on 1st purchase</strong>
+				<span style="position:absolute; left:6.8em; top:3.55em; padding-top:0.2em;">Subject to credit approval. &nbsp; <a alt="" href="#" style="font-family:Verdana; font-size:10px; color:#1958BD;">See terms</a></span>
+			</div>
+			<div id="shipping">
+				<span style="padding-left:6em; color: #666666;">Shipping: </span><span style="padding-left:0.5em;color:black;"><strong>FREE</strong></span><span style="padding-right:0.35em ;padding-left:0.65em; border-right:1px solid black;">Economy Shipping</span><a alt="" href="#" style="padding-left:0.5em; font-family:Verdana; font-size:10px; color:#1958BD;">See details</a>
+				<p style="margin-top:-0.3em;width: 8em; font-family:Verdana; font-size:10px;padding-left:14.1em; color: #666666;">Item location: </p><span style="position: absolute; top: 2.8em; left: 22.5em; display:inline; float:left; font-family:Verdana; font-size:10px; font-weight:700; color: #666666;">Windermere, Florida, United States</span>
+				<p style="margin-top: -1.3em; width: 8em; font-family:Verdana; font-size:10px;padding-left:14.1em; color: #666666;">Ships to: </p><span style="position: absolute; top: 4.5em; left: 19.6em; display:inline; float:left; font-family:Verdana; font-size:10px; font-weight:700; color: #666666;">Worldwide</span>
+				<p style="padding-left: 6.4em;  color: #666666; position:absolute; margin-top:-0.3em;" >Delivery:</p><span style="position:absolute; margin-top:-0.3em; padding-right:0.35em ;padding-left:11.1em;">Estimated between <strong style="color: black; "id="product_delivery_date"></strong></span>
+				
+				<p style="margin-left:11.1em; margin-top:1.7em;">Use <a style="color:#1958BD;"href="http://www.expedia.com/">Expedited Shipping</a> to get it by <span id="expedited_shipping"></span><a id="question" data-toggle="popover" data-placement="top" data-content="Estimated delivery dates include seller's handling time, and will depend on shipping service selected and receipt of cleared payment. Delivery times may vary, especially during peak periods." style="margin-left:1.15em; margin-top:0.2em; position:absolute;" data-trigger="click" ><img " alt="" src="questionMark.png"></a></p>
+				<p style="padding-left: 5.3em;  color: #666666; position:absolute; margin-top:-0.3em;" >Payments:<span style="border-right:1px solid black; position: absolute; left:11.1em; padding-right:0.3em;"><img src="paypal.gif" alt=""></span><a alt="" href="#" style="padding-left:0.5em; font-family:Verdana; font-size:10px; color:#1958BD; margin-left:6.6em;">See details</a></p>
+				<p style="padding-left: 5.3em;  color: #666666; margin-top:2.55em; margin-left:1.1em;" >Returns:<span style="width: 100%; margin-top:-0.2em; padding-left: 0.8em;color:black; border-right:1px solid black; padding-right:0.7em;">14 days money back or item exchange, buyer pays return shipping</span><a alt="" href="#" style="padding-left:0em; font-family:Verdana; font-size:10px; color:#1958BD; margin-left:0.5em; ">Read <span style="margin-left:5.9em;">details</span></a></p>
+			</div>
+			<div id="protection">
+			<a href="#" ><img src="protection.png" alt=""><a href="#" style="position:absolute; left:7.3em; top:5.2em;  font-family:Verdana;font-size: 10px;color:#1958BD; ">Learn more</a></a>
+			</div>
+			<div id="sellerInfo">
+				<div id="sellerInfoA">
+					<span style="position:absolute; margin-top: -0.7em; margin-left:0.05em; font-family: Trebuchet MS; font-size: 16px; font-weight: 700; "> Seller information</span>
+					<p><a id="sellerLink" style="position: absolute; margin-top:0.8em; color:#0000CC; font-family:Arial; font-size:13px; font-weight:700;" href="#">lumalav666</a><span style="position:absolute; margin-top:0.7em; left: 6.8em;  ">(<a id="sellerLink" style="color:#0000CC; font-family:Arial; font-size:13px; font-weight:400;" href="#">27</a> <img src="star.gif" alt="">)</span></p>
+					<p style="position:absolute; top:4.18em; margin-left:0.1em; ">100% Positive feedback</p>
+				</div>
+					<p style="position:absolute; left:0.9em; top:7.6em;"><a style="color:#1958BD;" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false">Save this seller</a></p>
+					<p style="position:absolute; top:9.3em; left:0.9em; "><a style="color:#1958BD;" href="#">See other items</a></p>
+			</div>
+			<div id="thanks">
+				<img src="thanks.png" alt="">
+			</div>
+			
+		</div>
+		<div id="suggestionsA">
+			<div style="width:112.3em; position:absolute;">
+			<p style="margin-left:12.3em; margin-top:0.6em;"> People who viewed this item also viewed <span style="margin-left:0.3em; position:absolute; margin-top:-0.1em"><a id="question2" data-toggle="popover" data-trigger="click" data-placement="right" data-content="These alternative suggestions have been selected for you by lUis' recommendation engine." ><img src="questionMark2.png" alt=""></a></span><span style="margin-top:0.4em; position:absolute; margin-left:96em; font-family:Verdana; font-size: 10px;"><a style="color:black; text-decoration:none;" href="http://lumalav.wufoo.com/forms/z7x4m1/" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false">Feedback on our suggestions</a></span></p>
+			</div>
+			<div id="itemA1">
+				<a href="http://www.expedia.com/" class="thumbnail" style="width:8em; margin-left:0em; " >
+				<img alt="" data-src="holder.js/300x200" src="tickets.png">
+				</a>
+				<span style="position:absolute; margin-top:-7em; margin-left:9.4em;"><a style="color:#1958BD;" href="http://www.expedia.com/">Airplane tickets</a></span>
+				<span style="font-family:Arial; font-size:16px; font-weight:700; position:absolute; margin-top:-2.4em; margin-left:7.2em;">$99.99-$499.99<img alt="" src="medal.png"></span>
+				<span style="position:absolute; margin-top:-2em; margin-left:11.4em; font-family:Verdana; font-size: 10px; color:black; text-decoration:none;">Free shipping</span>
+			</div>
+		</div>
+		<div id="productDescription" style="height:107em;">
+			<ul style="position:absolute; margin-left: 12.4em; min-width:30em; " class="nav nav-tabs">
+				<li id="firstTab" class="active">
+					<a id="myTabA" href="#description">Description</a>
+				</li>
+				<li class="otherTab">
+					<a id="myTabB" href="#payments">Shipping and payments</a>
+				</li>
+			</ul>
+			
+			<p style="position:absolute; font-family:Arial; font-size:13px; margin-left:118.2em; margin-top: 3em;min-width:10em;"><a style="padding-right:1em; text-decoration:none; color:#1958BD; border-right:1px solid black;" href="#">Print</a><a style="padding-left:1em; text-decoration:none; color:#1958BD;" href="#">Report item</a></p>
+			<div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="description">
+                
+				
+				<p style="min-width: 50em; position:absolute; margin-left: 18.6em; margin-top: 5.1em;font-family: Arial; font-size: 12.7px; font-weight: 400;">Seller assumes all responsibility for this listing.</p>
+				
+					<div id="itemSpecifics">
+						<span style="font-family: Trebuchet MS; font-size: 16px; font-weight: 700; position:absolute; margin-left: 1.3em; margin-top:0.4em;">Item specifics</span>
+						<p style="width: 26.4em; position:absolute; top: 2.6em; margin-left:1.6em; font-family: Arial; font-size: 13px;">Condition:</p>
+					
+						<div style="width: 40em; position:relative; font-family: Arial; font-size: 13px; margin-top:2.6em; margin-left:8.5em;" class="comment">
+							New: A brand-new, unused, unopened, undamaged item in its original packaging (where packaging is applicable). Packaging should be the same as what is found in a retail store, unless the item is handmade or was packaged by the manufacturer in non-retail packaging, such as an unprinted box or plastic bag. See the seller's listing for full details.
+						</div>
+					
+						<p style="width: 26.4em; top: 2.6em; margin-left:1.6em; font-family: Arial; font-size: 13px;">Brand: <span style="margin-left:3.7em;">Lavieri</span></p>
+						
+						<p style="width: 26.4em; top: 2.6em; position:absolute; margin-left:50em; font-family: Arial; font-size: 13px;">Height: <span style="margin-left:3.7em;">5'9"</span></p>
+						
+						<p style="position: absolute; width: 26.4em; top: 5.6em; margin-left:50em; font-family: Arial; font-size: 13px;">Languages: <span style="margin-left:1.6em;">English, Spanish</span></p>
+					</div>
+					<!-- PDF Container fdf.js http://mozilla.github.io/pdf.js/-->
+					<div id="outerContainer"  style="border:1px solid #CCCCCC; position:absolute; margin-top:14.9em;  height:75%; min-width:79.4em; ; width:79.4em; margin-left:13.1em;" >
+
+						  <div id="sidebarContainer">
+							<div id="toolbarSidebar">
+							  <div class="splitToolbarButton toggled">
+								<button id="viewThumbnail" class="toolbarButton group toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs">
+								   <span data-l10n-id="thumbs_label">Thumbnails</span>
+								</button>
+								<button id="viewOutline" class="toolbarButton group" title="Show Document Outline" tabindex="3" data-l10n-id="outline">
+								   <span data-l10n-id="outline_label">Document Outline</span>
+								</button>
+							  </div>
+							</div>
+							<div id="sidebarContent">
+							  <div id="thumbnailView">
+							  </div>
+							  <div id="outlineView" class="hidden">
+							  </div>
+							</div>
+						  </div>  <!-- sidebarContainer -->
+
+						  <div id="mainContainer">
+							<div class="findbar hidden doorHanger hiddenSmallView" id="findbar">
+							  <label for="findInput" class="toolbarLabel" data-l10n-id="find_label">Find:</label>
+							  <input id="findInput" class="toolbarField" tabindex="21">
+							  <div class="splitToolbarButton">
+								<button class="toolbarButton findPrevious" title="" id="findPrevious" tabindex="22" data-l10n-id="find_previous">
+								  <span data-l10n-id="find_previous_label">Previous</span>
+								</button>
+								<div class="splitToolbarButtonSeparator"></div>
+								<button class="toolbarButton findNext" title="" id="findNext" tabindex="23" data-l10n-id="find_next">
+								  <span data-l10n-id="find_next_label">Next</span>
+								</button>
+							  </div>
+							  <input type="checkbox" id="findHighlightAll" class="toolbarField">
+							  <label for="findHighlightAll" class="toolbarLabel" tabindex="24" data-l10n-id="find_highlight">Highlight all</label>
+							  <input type="checkbox" id="findMatchCase" class="toolbarField">
+							  <label for="findMatchCase" class="toolbarLabel" tabindex="25" data-l10n-id="find_match_case_label">Match case</label>
+							  <span id="findMsg" class="toolbarLabel"></span>
+							</div>
+							<div class="toolbar">
+							  <div id="toolbarContainer">
+								<div id="toolbarViewer">
+								  <div id="toolbarViewerLeft">
+									<button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="4" data-l10n-id="toggle_sidebar">
+									  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+									</button>
+									<div class="toolbarButtonSpacer"></div>
+									<button id="viewFind" class="toolbarButton group hiddenSmallView" title="Find in Document" tabindex="5" data-l10n-id="findbar">
+									   <span data-l10n-id="findbar_label">Find</span>
+									</button>
+									<div class="splitToolbarButton">
+									  <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="6" data-l10n-id="previous">
+										<span data-l10n-id="previous_label">Previous</span>
+									  </button>
+									  <div class="splitToolbarButtonSeparator"></div>
+									  <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="7" data-l10n-id="next">
+										<span data-l10n-id="next_label">Next</span>
+									  </button>
+									</div>
+									<label id="pageNumberLabel" class="toolbarLabel" for="pageNumber" data-l10n-id="page_label">Page: </label>
+									<input type="number" id="pageNumber" class="toolbarField pageNumber" value="1" size="4" min="1" tabindex="8">
+									</input>
+									<span id="numPages" class="toolbarLabel"></span>
+								  </div>
+								  <div id="toolbarViewerRight">
+									<input id="fileInput" class="fileInput" type="file" oncontextmenu="return false;" style="visibility: hidden; position: fixed; right: 0; top: 0" />
+
+									<button id="presentationMode" class="toolbarButton presentationMode hiddenSmallView" title="Switch to Presentation Mode" tabindex="12" data-l10n-id="presentation_mode">
+									  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+									</button>
+
+									<button id="openFile" class="toolbarButton openFile hiddenSmallView" title="Open File" tabindex="13" data-l10n-id="open_file">
+									   <span data-l10n-id="open_file_label">Open</span>
+									</button>
+
+									<button id="print" class="toolbarButton print" title="Print" tabindex="14" data-l10n-id="print">
+									  <span data-l10n-id="print_label">Print</span>
+									</button>
+
+									<button id="download" class="toolbarButton download" title="Download" tabindex="15" data-l10n-id="download">
+									  <span data-l10n-id="download_label">Download</span>
+									</button>
+									<!-- <div class="toolbarButtonSpacer"></div> -->
+									<a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="16" data-l10n-id="bookmark"><span data-l10n-id="bookmark_label">Current View</span></a>
+								  </div>
+								  <div class="outerCenter">
+									<div class="innerCenter" id="toolbarViewerMiddle">
+									  <div class="splitToolbarButton">
+										<button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="9" data-l10n-id="zoom_out">
+										  <span data-l10n-id="zoom_out_label">Zoom Out</span>
+										</button>
+										<div class="splitToolbarButtonSeparator"></div>
+										<button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="10" data-l10n-id="zoom_in">
+										  <span data-l10n-id="zoom_in_label">Zoom In</span>
+										 </button>
+									  </div>
+									  <span id="scaleSelectContainer" class="dropdownToolbarButton">
+										 <select id="scaleSelect" title="Zoom" oncontextmenu="return false;" tabindex="11" data-l10n-id="zoom">
+										  <option id="pageAutoOption" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+										  <option id="pageActualOption" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+										  <option id="pageFitOption" value="page-fit" data-l10n-id="page_scale_fit">Fit Page</option>
+										  <option id="pageWidthOption" value="page-width" data-l10n-id="page_scale_width">Full Width</option>
+										  <option id="customScaleOption" value="custom"></option>
+										  <option value="0.5">50%</option>
+										  <option value="0.75">75%</option>
+										  <option value="1">100%</option>
+										  <option value="1.25">125%</option>
+										  <option value="1.5">150%</option>
+										  <option value="2">200%</option>
+										</select>
+									  </span>
+									</div>
+								  </div>
+								</div>
+								<div id="loadingBar">
+								  <div class="progress">
+									<div class="glimmer">
+									</div>
+								  </div>
+								</div>
+							  </div>
+							</div>
+
+							<menu type="context" id="viewerContextMenu">
+							  <menuitem id="firstPage" label="First Page"
+										data-l10n-id="first_page" ></menuitem>
+							  <menuitem id="lastPage" label="Last Page"
+										data-l10n-id="last_page" ></menuitem>
+							  <menuitem id="pageRotateCcw" label="Rotate Counter-Clockwise"
+										data-l10n-id="page_rotate_ccw" ></menuitem>
+							  <menuitem id="pageRotateCw" label="Rotate Clockwise"
+										data-l10n-id="page_rotate_cw" ></menuitem>
+							</menu>
+
+							<div id="viewerContainer">
+							  <div id="viewer" contextmenu="viewerContextMenu"></div>
+							</div>
+
+							<div id="errorWrapper" hidden='true'>
+							  <div id="errorMessageLeft">
+								<span id="errorMessage"></span>
+								<button id="errorShowMore" onclick="" oncontextmenu="return false;" data-l10n-id="error_more_info">
+								  More Information
+								</button>
+								<button id="errorShowLess" onclick="" oncontextmenu="return false;" data-l10n-id="error_less_info" hidden='true'>
+								  Less Information
+								</button>
+							  </div>
+							  <div id="errorMessageRight">
+								<button id="errorClose" oncontextmenu="return false;" data-l10n-id="error_close">
+								  Close
+								</button>
+							  </div>
+							  <div class="clearBoth"></div>
+							  <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+							</div>
+						  </div> <!-- mainContainer -->
+
+						</div> <!-- outerContainer -->
+					
+					<!-- End of PDF Container-->
+					
+				</div>
+              <div class="tab-pane fade" id="payments">
+                <p style="position:absolute; min-width:50em; margin-left: 18.6em; margin-top: 4.1em;font-family: Arial; font-size: 12.7px; font-weight: 400;">Seller assumes all responsibility for this listing.</p>
+				<div id="shippingAndHandling">
+				
+				<span style="font-family: Trebuchet MS; font-size: 16px; font-weight: 700; position:absolute; margin-left: 1.6em; margin-top:0.15em;">Shipping and handling</span>
+				<p style="position:absolute; margin-top: 2.7em; margin-left:2.1em;color: #666666; font-family: Arial; font-size: 12.7px;">Item location: Windermere, Florida, United States</p>
+				<p style="position:absolute; margin-top: 4.85em; margin-left:2.1em;color: #666666; font-family: Arial; font-size: 12.7px;">Shipping to: Worldwide</p>
+				<p style="width: 26.4em; position:absolute; margin-top: 8em; margin-left:2.2em; font-family: Arial; font-size: 12px;">Change country:
+				
+				<select id="countries">
+					<option>United States</option>
+					<option value="ISO 3166-2:AF">Afghanistan</option>
+					<option value="ISO 3166-2:AX">Aland Islands</option>
+					<option value="ISO 3166-2:AL">Albania</option>
+					<option value="ISO 3166-2:DZ">Algeria</option>
+					<option value="ISO 3166-2:AS">American Samoa</option>
+					<option value="ISO 3166-2:AD">Andorra</option>
+					<option value="ISO 3166-2:AO">Angola</option>
+					<option value="ISO 3166-2:AI">Anguilla</option>
+					<option value="ISO 3166-2:AQ">Antarctica</option>
+					<option value="ISO 3166-2:AG">Antigua and Barbuda</option>
+					<option value="ISO 3166-2:AR">Argentina</option>
+					<option value="ISO 3166-2:AM">Armenia</option>
+					<option value="ISO 3166-2:AW">Aruba</option>
+					<option value="ISO 3166-2:AU">Australia</option>
+					<option value="ISO 3166-2:AT">Austria</option>
+					<option value="ISO 3166-2:AZ">Azerbaijan</option>
+					<option value="ISO 3166-2:BS">Bahamas</option>
+					<option value="ISO 3166-2:BH">Bahrain</option>
+					<option value="ISO 3166-2:BD">Bangladesh</option>
+					<option value="ISO 3166-2:BB">Barbados</option>
+					<option value="ISO 3166-2:BY">Belarus</option>
+					<option value="ISO 3166-2:BE">Belgium</option>
+					<option value="ISO 3166-2:BZ">Belize</option>
+					<option value="ISO 3166-2:BJ">Benin</option>
+					<option value="ISO 3166-2:BM">Bermuda</option>
+					<option value="ISO 3166-2:BT">Bhutan</option>
+					<option value="ISO 3166-2:BO">Bolivia, Plurinational State of</option>
+					<option value="ISO 3166-2:BQ">Bonaire, Sint Eustatius and Saba</option>
+					<option value="ISO 3166-2:BA">Bosnia and Herzegovina</option>
+					<option value="ISO 3166-2:BW">Botswana</option>
+					<option value="ISO 3166-2:BV">Bouvet Island</option>
+					<option value="ISO 3166-2:BR">Brazil</option>
+					<option value="ISO 3166-2:IO">British Indian Ocean Territory</option>
+					<option value="ISO 3166-2:BN">Brunei Darussalam</option>
+					<option value="ISO 3166-2:BG">Bulgaria</option>
+					<option value="ISO 3166-2:BF">Burkina Faso</option>
+					<option value="ISO 3166-2:BI">Burundi</option>
+					<option value="ISO 3166-2:KH">Cambodia</option>
+					<option value="ISO 3166-2:CM">Cameroon</option>
+					<option value="ISO 3166-2:CA">Canada</option>
+					<option value="ISO 3166-2:CV">Cape Verde</option>
+					<option value="ISO 3166-2:KY">Cayman Islands</option>
+					<option value="ISO 3166-2:CF">Central African Republic</option>
+					<option value="ISO 3166-2:TD">Chad</option>
+					<option value="ISO 3166-2:CL">Chile</option>
+					<option value="ISO 3166-2:CN">China</option>
+					<option value="ISO 3166-2:CX">Christmas Island</option>
+					<option value="ISO 3166-2:CC">Cocos (Keeling) Islands</option>
+					<option value="ISO 3166-2:CO">Colombia</option>
+					<option value="ISO 3166-2:KM">Comoros</option>
+					<option value="ISO 3166-2:CG">Congo</option>
+					<option value="ISO 3166-2:CD">Congo, the Democratic Republic of the</option>
+					<option value="ISO 3166-2:CK">Cook Islands</option>
+					<option value="ISO 3166-2:CR">Costa Rica</option>
+					<option value="ISO 3166-2:CI">Côte d'Ivoire</option>
+					<option value="ISO 3166-2:HR">Croatia</option>
+					<option value="ISO 3166-2:CU">Cuba</option>
+					<option value="ISO 3166-2:CW">Curaçao</option>
+					<option value="ISO 3166-2:CY">Cyprus</option>
+					<option value="ISO 3166-2:CZ">Czech Republic</option>
+					<option value="ISO 3166-2:DK">Denmark</option>
+					<option value="ISO 3166-2:DJ">Djibouti</option>
+					<option value="ISO 3166-2:DM">Dominica</option>
+					<option value="ISO 3166-2:DO">Dominican Republic</option>
+					<option value="ISO 3166-2:EC">Ecuador</option>
+					<option value="ISO 3166-2:EG">Egypt</option>
+					<option value="ISO 3166-2:SV">El Salvador</option>
+					<option value="ISO 3166-2:GQ">Equatorial Guinea</option>
+					<option value="ISO 3166-2:ER">Eritrea</option>
+					<option value="ISO 3166-2:EE">Estonia</option>
+					<option value="ISO 3166-2:ET">Ethiopia</option>
+					<option value="ISO 3166-2:FK">Falkland Islands (Malvinas)</option>
+					<option value="ISO 3166-2:FO">Faroe Islands</option>
+					<option value="ISO 3166-2:FJ">Fiji</option>
+					<option value="ISO 3166-2:FI">Finland</option>
+					<option value="ISO 3166-2:FR">France</option>
+					<option value="ISO 3166-2:GF">French Guiana</option>
+					<option value="ISO 3166-2:PF">French Polynesia</option>
+					<option value="ISO 3166-2:TF">French Southern Territories</option>
+					<option value="ISO 3166-2:GA">Gabon</option>
+					<option value="ISO 3166-2:GM">Gambia</option>
+					<option value="ISO 3166-2:GE">Georgia</option>
+					<option value="ISO 3166-2:DE">Germany</option>
+					<option value="ISO 3166-2:GH">Ghana</option>
+					<option value="ISO 3166-2:GI">Gibraltar</option>
+					<option value="ISO 3166-2:GR">Greece</option>
+					<option value="ISO 3166-2:GL">Greenland</option>
+					<option value="ISO 3166-2:GD">Grenada</option>
+					<option value="ISO 3166-2:GP">Guadeloupe</option>
+					<option value="ISO 3166-2:GU">Guam</option>
+					<option value="ISO 3166-2:GT">Guatemala</option>
+					<option value="ISO 3166-2:GG">Guernsey</option>
+					<option value="ISO 3166-2:GN">Guinea</option>
+					<option value="ISO 3166-2:GW">Guinea-Bissau</option>
+					<option value="ISO 3166-2:GY">Guyana</option>
+					<option value="ISO 3166-2:HT">Haiti</option>
+					<option value="ISO 3166-2:HM">Heard Island and McDonald Islands</option>
+					<option value="ISO 3166-2:VA">Holy See (Vatican City State)</option>
+					<option value="ISO 3166-2:HN">Honduras</option>
+					<option value="ISO 3166-2:HK">Hong Kong</option>
+					<option value="ISO 3166-2:HU">Hungary</option>
+					<option value="ISO 3166-2:IS">Iceland</option>
+					<option value="ISO 3166-2:IN">India</option>
+					<option value="ISO 3166-2:ID">Indonesia</option>
+					<option value="ISO 3166-2:IR">Iran, Islamic Republic of</option>
+					<option value="ISO 3166-2:IQ">Iraq</option>
+					<option value="ISO 3166-2:IE">Ireland</option>
+					<option value="ISO 3166-2:IM">Isle of Man</option>
+					<option value="ISO 3166-2:IL">Israel</option>
+					<option value="ISO 3166-2:IT">Italy</option>
+					<option value="ISO 3166-2:JM">Jamaica</option>
+					<option value="ISO 3166-2:JP">Japan</option>
+					<option value="ISO 3166-2:JE">Jersey</option>
+					<option value="ISO 3166-2:JO">Jordan</option>
+					<option value="ISO 3166-2:KZ">Kazakhstan</option>
+					<option value="ISO 3166-2:KE">Kenya</option>
+					<option value="ISO 3166-2:KI">Kiribati</option>
+					<option value="ISO 3166-2:KP">Korea, Democratic People's Republic of</option>
+					<option value="ISO 3166-2:KR">Korea, Republic of</option>
+					<option value="ISO 3166-2:KW">Kuwait</option>
+					<option value="ISO 3166-2:KG">Kyrgyzstan</option>
+					<option value="ISO 3166-2:LA">Lao People's Democratic Republic</option>
+					<option value="ISO 3166-2:LV">Latvia</option>
+					<option value="ISO 3166-2:LB">Lebanon</option>
+					<option value="ISO 3166-2:LS">Lesotho</option>
+					<option value="ISO 3166-2:LR">Liberia</option>
+					<option value="ISO 3166-2:LY">Libya</option>
+					<option value="ISO 3166-2:LI">Liechtenstein</option>
+					<option value="ISO 3166-2:LT">Lithuania</option>
+					<option value="ISO 3166-2:LU">Luxembourg</option>
+					<option value="ISO 3166-2:MO">Macao</option>
+					<option value="ISO 3166-2:MK">Macedonia, the former Yugoslav Republic of</option>
+					<option value="ISO 3166-2:MG">Madagascar</option>
+					<option value="ISO 3166-2:MW">Malawi</option>
+					<option value="ISO 3166-2:MY">Malaysia</option>
+					<option value="ISO 3166-2:MV">Maldives</option>
+					<option value="ISO 3166-2:ML">Mali</option>
+					<option value="ISO 3166-2:MT">Malta</option>
+					<option value="ISO 3166-2:MH">Marshall Islands</option>
+					<option value="ISO 3166-2:MQ">Martinique</option>
+					<option value="ISO 3166-2:MR">Mauritania</option>
+					<option value="ISO 3166-2:MU">Mauritius</option>
+					<option value="ISO 3166-2:YT">Mayotte</option>
+					<option value="ISO 3166-2:MX">Mexico</option>
+					<option value="ISO 3166-2:FM">Micronesia, Federated States of</option>
+					<option value="ISO 3166-2:MD">Moldova, Republic of</option>
+					<option value="ISO 3166-2:MC">Monaco</option>
+					<option value="ISO 3166-2:MN">Mongolia</option>
+					<option value="ISO 3166-2:ME">Montenegro</option>
+					<option value="ISO 3166-2:MS">Montserrat</option>
+					<option value="ISO 3166-2:MA">Morocco</option>
+					<option value="ISO 3166-2:MZ">Mozambique</option>
+					<option value="ISO 3166-2:MM">Myanmar</option>
+					<option value="ISO 3166-2:NA">Namibia</option>
+					<option value="ISO 3166-2:NR">Nauru</option>
+					<option value="ISO 3166-2:NP">Nepal</option>
+					<option value="ISO 3166-2:NL">Netherlands</option>
+					<option value="ISO 3166-2:NC">New Caledonia</option>
+					<option value="ISO 3166-2:NZ">New Zealand</option>
+					<option value="ISO 3166-2:NI">Nicaragua</option>
+					<option value="ISO 3166-2:NE">Niger</option>
+					<option value="ISO 3166-2:NG">Nigeria</option>
+					<option value="ISO 3166-2:NU">Niue</option>
+					<option value="ISO 3166-2:NF">Norfolk Island</option>
+					<option value="ISO 3166-2:MP">Northern Mariana Islands</option>
+					<option value="ISO 3166-2:NO">Norway</option>
+					<option value="ISO 3166-2:OM">Oman</option>
+					<option value="ISO 3166-2:PK">Pakistan</option>
+					<option value="ISO 3166-2:PW">Palau</option>
+					<option value="ISO 3166-2:PS">Palestinian Territory, Occupied</option>
+					<option value="ISO 3166-2:PA">Panama</option>
+					<option value="ISO 3166-2:PG">Papua New Guinea</option>
+					<option value="ISO 3166-2:PY">Paraguay</option>
+					<option value="ISO 3166-2:PE">Peru</option>
+					<option value="ISO 3166-2:PH">Philippines</option>
+					<option value="ISO 3166-2:PN">Pitcairn</option>
+					<option value="ISO 3166-2:PL">Poland</option>
+					<option value="ISO 3166-2:PT">Portugal</option>
+					<option value="ISO 3166-2:PR">Puerto Rico</option>
+					<option value="ISO 3166-2:QA">Qatar</option>
+					<option value="ISO 3166-2:RE">Réunion</option>
+					<option value="ISO 3166-2:RO">Romania</option>
+					<option value="ISO 3166-2:RU">Russian Federation</option>
+					<option value="ISO 3166-2:RW">Rwanda</option>
+					<option value="ISO 3166-2:BL">Saint Barthélemy</option>
+					<option value="ISO 3166-2:SH">Saint Helena, Ascension and Tristan da Cunha</option>
+					<option value="ISO 3166-2:KN">Saint Kitts and Nevis</option>
+					<option value="ISO 3166-2:LC">Saint Lucia</option>
+					<option value="ISO 3166-2:MF">Saint Martin (French part)</option>
+					<option value="ISO 3166-2:PM">Saint Pierre and Miquelon</option>
+					<option value="ISO 3166-2:VC">Saint Vincent and the Grenadines</option>
+					<option value="ISO 3166-2:WS">Samoa</option>
+					<option value="ISO 3166-2:SM">San Marino</option>
+					<option value="ISO 3166-2:ST">Sao Tome and Principe</option>
+					<option value="ISO 3166-2:SA">Saudi Arabia</option>
+					<option value="ISO 3166-2:SN">Senegal</option>
+					<option value="ISO 3166-2:RS">Serbia</option>
+					<option value="ISO 3166-2:SC">Seychelles</option>
+					<option value="ISO 3166-2:SL">Sierra Leone</option>
+					<option value="ISO 3166-2:SG">Singapore</option>
+					<option value="ISO 3166-2:SX">Sint Maarten (Dutch part)</option>
+					<option value="ISO 3166-2:SK">Slovakia</option>
+					<option value="ISO 3166-2:SI">Slovenia</option>
+					<option value="ISO 3166-2:SB">Solomon Islands</option>
+					<option value="ISO 3166-2:SO">Somalia</option>
+					<option value="ISO 3166-2:ZA">South Africa</option>
+					<option value="ISO 3166-2:GS">South Georgia and the South Sandwich Islands</option>
+					<option value="ISO 3166-2:SS">South Sudan</option>
+					<option value="ISO 3166-2:ES">Spain</option>
+					<option value="ISO 3166-2:LK">Sri Lanka</option>
+					<option value="ISO 3166-2:SD">Sudan</option>
+					<option value="ISO 3166-2:SR">Suriname</option>
+					<option value="ISO 3166-2:SJ">Svalbard and Jan Mayen</option>
+					<option value="ISO 3166-2:SZ">Swaziland</option>
+					<option value="ISO 3166-2:SE">Sweden</option>
+					<option value="ISO 3166-2:CH">Switzerland</option>
+					<option value="ISO 3166-2:SY">Syrian Arab Republic</option>
+					<option value="ISO 3166-2:TW">Taiwan, Province of China</option>
+					<option value="ISO 3166-2:TJ">Tajikistan</option>
+					<option value="ISO 3166-2:TZ">Tanzania, United Republic of</option>
+					<option value="ISO 3166-2:TH">Thailand</option>
+					<option value="ISO 3166-2:TL">Timor-Leste</option>
+					<option value="ISO 3166-2:TG">Togo</option>
+					<option value="ISO 3166-2:TK">Tokelau</option>
+					<option value="ISO 3166-2:TO">Tonga</option>
+					<option value="ISO 3166-2:TT">Trinidad and Tobago</option>
+					<option value="ISO 3166-2:TN">Tunisia</option>
+					<option value="ISO 3166-2:TR">Turkey</option>
+					<option value="ISO 3166-2:TM">Turkmenistan</option>
+					<option value="ISO 3166-2:TC">Turks and Caicos Islands</option>
+					<option value="ISO 3166-2:TV">Tuvalu</option>
+					<option value="ISO 3166-2:UG">Uganda</option>
+					<option value="ISO 3166-2:UA">Ukraine</option>
+					<option value="ISO 3166-2:AE">United Arab Emirates</option>
+					<option value="ISO 3166-2:GB">United Kingdom</option>
+					<option selected>United States</option>
+					<option value="ISO 3166-2:UM">United States Minor Outlying Islands</option>
+					<option value="ISO 3166-2:UY">Uruguay</option>
+					<option value="ISO 3166-2:UZ">Uzbekistan</option>
+					<option value="ISO 3166-2:VU">Vanuatu</option>
+					<option value="ISO 3166-2:VE">Venezuela, Bolivarian Republic of</option>
+					<option value="ISO 3166-2:VN">Viet Nam</option>
+					<option value="ISO 3166-2:VG">Virgin Islands, British</option>
+					<option value="ISO 3166-2:VI">Virgin Islands, U.S.</option>
+					<option value="ISO 3166-2:WF">Wallis and Futuna</option>
+					<option value="ISO 3166-2:EH">Western Sahara</option>
+					<option value="ISO 3166-2:YE">Yemen</option>
+					<option value="ISO 3166-2:ZM">Zambia</option>
+					<option value="ISO 3166-2:ZW">Zimbabwe</option>
+				</select>
+				<span style="position:absolute; margin-left:53.3em; margin-top:0.1em; width: 4.7em;font-family: Arial; font-size: 12px;">ZIP Code: </span>
+				<input style="height: 0.94em; width:6em; font-family: Arial; font-size:12px; position: absolute; margin-left: 58.5em; margin-top: 0.1em; border-radius:0.2em;" type="text">
+				<a href="http:www.expedia.com/"><button style=" height: 2em; font-family: Verdana; font-size:12px; width:7.5em;position: absolute; margin-left: 66.5em; margin-top: 0.1em;">Get Rates</button></a></p>
+					<div id="bar1">
+					<span style="position: absolute; margin-left:1.9em; margin-top:0.4em;" >Shipping and handling</span>
+					<span style="position: absolute; margin-left:26.7em; margin-top:0.4em;" >To</span>
+					<span style="position: absolute; margin-left:43.9em; margin-top:0.4em;" >Service</span>
+					<span style="position: absolute; margin-left:87.7em; margin-top:0.4em;" >Delivery*</span>
+					</div>
+					<p style="width:79.3em; height:1.5em; "><strong style="font-family:Arial; font-size: 12.7px; font-weight:700;position:absolute; margin-left:3.2em; margin-top:0.6em;color: #666666;">Free shipping</strong><span style="position:absolute; margin-left:22.7em; font-family:Arial;font-size: 12.7px;font-weight:400; margin-top:0.6em;color: #666666;">United States</span><span style="position:absolute; font-family:Arial;font-size: 12.7px; font-weight:400; margin-left:36.2em; margin-top:0.75em;color: #666666;">Economy Shipping</span><span style="position:absolute; margin-left:70.7em; font-family:Arial;font-size: 12.7px;font-weight:400; margin-top:0.6em;color: #666666;">Estimated between</span><strong style="position:absolute; margin-top:0.6em; margin-left:79.7em; font-family:Arial;font-size: 12.7px;font-weight:700;color: #666666;" id="product_delivery_date2"></strong></p>
+					
+					<p style="width:79.3em; height:1.5em; "><strong style="font-family:Arial; font-size: 12.7px; font-weight:400;position:absolute; margin-left:3.2em; margin-top:0.4em;color: #666666;">US $9.99</strong><span style="position:absolute; margin-left:22.7em; font-family:Arial;font-size: 12.7px;font-weight:400; margin-top:0.4em;color: #666666;">United States</span><span style="position:absolute; font-family:Arial;font-size: 12.7px; font-weight:400; margin-left:36.2em; margin-top:0.55em;color: #666666;">Expedited Shipping (USPS Priority Mail<sup>&reg;</sup>)</span><span style="position:absolute; margin-left:70.7em; font-family:Arial;font-size: 12.7px;font-weight:400; margin-top:0.4em;color: #666666;">Estimated between</span><strong style="position:absolute; margin-top:0.4em; margin-left:79.7em; font-family:Arial;font-size: 12.7px;font-weight:700;color: #666666;" id="product_delivery_date3"></strong></p>
+					
+					<div id="estimatedCosts" style="margin-left:1.75em; position:absolute; margin-top: -0.3em; height:1em; border-top:1px solid #CCCCCC; width:75.85em; ">
+						<span style="color: #666666;margin-top:0.2em; margin-left:1.8em; position:absolute; font-family:Verdana; font-size:10px; ">* <a style="color:#1958BD;" href="#">Estimated delivery dates</a> include seller's handling time, and will depend on shipping service selected and receipt of <a style="color:#1958BD;" href="#">cleared payment</a>. Delivery times may vary, especially during peak periods. </span>
+					</div>
+					<div id="bar2">
+					<span style="position: absolute; margin-left:1.9em; margin-top:0.4em;" >Handling time</span>
+					<span style="position: absolute; margin-left:76.3em; margin-top:0.4em;" >Estimated sales tax</span>
+					</div>
+					<span style="color: #666666;margin-top:1.2em; margin-left:3.2em; ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">Will usually ship within 1 business day of <a style="color:#1958BD;" href="#">receiving cleared payment</a>.</span>
+					
+					<span style="color: #666666;margin-top:0.4em; margin-left:61.75em; ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">Seller charges sales tax for items shipped to: CA*(8.75%).</span>
+					
+					<span style="color: #666666;margin-top:2.3em; margin-left:78.4em; ;font-family:Arial;font-size: 10px;font-weight:400; position:absolute;">* Tax applies to subtotal + S&H for these states only</span>
+				</div>
+				<div id="returnPolicy">
+					<span style="font-family: Arial; font-size: 15px; font-weight: 700; position:absolute; margin-left: 1.7em; margin-top:0.15em;">Return policy</span>
+					<div id="bar3">
+					<span style="position: absolute; margin-left:1.8em; margin-top:0.5em;" >After receiving the item, contact seller within</span>
+					<span style="position: absolute; margin-left:47.7em; margin-top:0.5em;" >Refund will be given as</span>
+					<span style="position: absolute; margin-left:93.6em; margin-top:0.5em;" >Return shipping</span>
+					</div>
+					
+					<span style="color: #666666;margin-top:0.3em; margin-left:3.4em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">14 days</span>
+					<span style="color: #666666;margin-top:0.3em; margin-left:39.55em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">Money back or item exchange (buyer's choice)</span>
+					<span style="color: #666666;margin-top:0.3em; margin-left:75.7em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">Buyer pays return shipping</span>
+					
+					<div id="bar4">
+					<span style="position: absolute; margin-left:1.8em; margin-top:0.5em;" >Return policy details</span>
+					</div>	
+
+					<span style="color: #666666;margin-top:0.3em; margin-left:3.4em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">For Defective Item Exchange: If the item you have ordered is defective please contact us within the 14 days of the delivered day for exchange RMA# and ship it back to us (Buyer pays return shipping for exchange).</span>
+					
+					<span style="color: #666666;margin-top:1.5em; margin-left:3.4em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">We will be tested by our technicians to verify the problem. If found to be defective, we will send out replacement. For More detail please refer to our Terms and Conditions in the listing.</span>
+					
+					<span style="color: #666666;margin-top:4.05em; margin-left:3.4em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">For Refund: If you do not satisfy with the product for any reason within the 14 days of the delivered day , simply just email us to obtain the Refund #, ship it back and we will issue refund back of the product price and Less 25%</span>
+					
+					<span style="color: #666666;margin-top:5.3em; margin-left:3.4em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">restocking fee . Shipping, handling and insurance fees are non-refundable in any circumstances. For More detail please refer to our Terms and Conditions in the listing.</span>
+				</div>
+				<div id="paymentDetails">
+					<span style="font-family: Trebuchet MS; font-size: 16px; font-weight: 700; position:absolute; margin-left: 1.55em; margin-top:0.25em;">Payment details</span>
+				
+					<div id="bar5">
+						<span style="position: absolute; margin-left:1em; margin-top:0.4em;" >Payment method</span>
+						<span style="position: absolute; margin-left:46.9em; margin-top:0.4em;" >Preferred / Accepted</span>
+					</div>
+				
+					<img style="margin-top:0.4em; margin-left:3.5em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;" alt="" src="paypal2.gif">
+				
+					<span style="margin-top:2.7em; margin-left:39.6em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">PayPal Preferred</span>
+				
+					<div id="methods" style="margin-left:1.4em; position:absolute; margin-top: 5em; height:0em; border-top:1px solid #CCCCCC; width:76.58em; ">
+					</div>
+				
+					<img style="margin-top:7.6em; margin-left:3.5em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;" alt="" src="paypal3.gif">
+				
+					<span style="font-family: Trebuchet MS; font-size:16px; font-weight:700; position: absolute; margin-left:1.55em; margin-top:9.72em;" >Immediate payment required for this item</span>
+				
+					<span style="margin-top:8.65em; margin-left:39.6em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">Accepted</span>
+				
+					<span style="color:#666666; margin-top:14.3em; margin-left:2.15em;  ;font-family:Arial;font-size: 12.7px;font-weight:400; position:absolute;">Immediate payment of US $79.99 is required.</span>
+				</div>
+              </div>
+            </div>
+			<p style="position:absolute; width:80em; font-family:Arial; font-size: 20px; margin-left:11.15em; margin-top:50.45em;"> People who bought this item also bought
+			<span style="margin-left:0.3em; position:absolute; margin-top:0em"></span><span style="color:#666666; width:16em; position:absolute; margin-top:0.4em; margin-left:77em; font-family:Arial; font-size: 12px;"><a style="color:#666666; text-decoration:none;" href="#">Feedback on our suggestions</a></span></p>
+			
+			<div id="items" style="height:15em; width: 10em; position:absolute; margin-top:57.9em; margin-left:16.9em;">
+			<a id="itemB1" style=" height: 15.1em;position:absolute; margin-top:0em; margin-left:0em;width: 9em; box-shadow: 0.625em 0.044em 0.50em #888;" href="http://www.expedia.com/" class="thumbnail" style="width:8em; margin-left:0em; " >
+				<span ><a id="itemB1a" style=" color:#1958BD; font-family:Helvetica;font-size: 12px; position:absolute; margin-left:3.2em; margin-top:0.5em;" href="#">See suggestions</a></span>
+				<a href="http://www.expedia.com/" class="thumbnail" style="width:5em; margin-left:2em; margin-top: 3em; position:absolute;  " >
+				<img alt="" data-src="holder.js/300x200" src="tickets.png">
+				</a>
+				<span ><a id="itemB1a" style=" color:#1958BD; font-family:Helvetica;font-size: 12px; position:absolute; margin-left:3.2em; margin-top:11.2em;" href="http://www.expedia.com/">Airplane Tickets</a></span>
+				<span style="margin-top:10em; font-family:Arial; font-size:16px; font-weight:700; position:absolute; margin-left:2.3em;">$99.99-$499.99</span>
+				<span style="font-family: Verdana; font-size:10px; color:#666666; margin-top:17.9em; position:absolute; margin-left:3.7em;">Buy It Now <img alt="" src="medal.png"></span>
+				<span style="font-family: Verdana; font-size:10px; color:black; margin-top:19.4em; position:absolute; margin-left:3.7em;">Free shipping</span>
+			</a>
+			</div>
+			
+			<p style="position:absolute; width:80em; font-family:Arial; font-size: 20px; margin-left:11.15em; margin-top:67.1em;"> See what other people are watching
+			<span style="margin-left:0.3em; position:absolute; margin-top:0em"></span><span style="color:#666666; width:16em; position:absolute; margin-top:0.4em; margin-left:80.4em; font-family:Arial; font-size: 12px;"><a style="color:#666666; text-decoration:none;" href="#">Feedback on our suggestions</a></span></p>
+			
+			<div id="items2" style=" height:15em; width: 10em; position:absolute; margin-top:77.9em; margin-left:16.9em;">
+			<a id="itemC1" style=" height: 15.1em;position:absolute; margin-top:0em; margin-left:0em;width: 9em; box-shadow: 0.625em 0.044em 0.50em #888;" href="http://www.expedia.com/" class="thumbnail" style="width:8em; margin-left:0em; " >
+				<span ><a id="itemC1a" style=" color:#1958BD; font-family:Helvetica;font-size: 12px; position:absolute; margin-left:3.2em; margin-top:0.5em;" href="#">See suggestions</a></span>
+				<a href="http://www.expedia.com/" class="thumbnail" style="width:5em; margin-left:2em; margin-top: 3em; position:absolute;  " >
+				<img alt="" data-src="holder.js/300x200" src="tickets.png">
+				</a>
+				<span ><a id="itemC1a" style=" color:#1958BD; font-family:Helvetica;font-size: 12px; position:absolute; margin-left:3.2em; margin-top:11.2em;" href="http://www.expedia.com/">Airplane Tickets</a></span>
+				<span style="margin-top:10em; font-family:Arial; font-size:16px; font-weight:700; position:absolute; margin-left:2.3em;">$99.99-$499.99</span>
+				<span style="font-family: Verdana; font-size:10px; color:#666666; margin-top:17.9em; position:absolute; margin-left:3.7em;">Buy It Now <img alt="" src="medal.png"></span>
+				<span style="font-family: Verdana; font-size:10px; color:black; margin-top:19.4em; position:absolute; margin-left:3.7em;">Free shipping</span>
+			</a>
+			</div>
+			<div style="font-family:Arial; font-size: 13px; border-bottom:1px solid #CCCCCC; border-top:1px solid #CCCCCC; position:absolute; width:112.3em; height:5.4em; margin-top:130.7em; margin-left:17.1em; ">
+			<p style=" width:120em; position:absolute; top:0.1em; "><span style="padding-right:0.6em;  border-right:1px solid black;"><a style="color:#1958BD;" href="#">Back to home page</a></span>
+			<span style="padding-left:0.3em; "> See More Details about</span>
+			<span style=" "><a style="color:#1958BD;"  href="#">"Luis Lavieri - Software Developer"</a></span><a style="position:absolute; margin-left: 70.7em; color:#1958BD;" href="#">Return to top</a></p>
+			<p style="position:absolute; top:1.8em; "><span style=""> More to explore  : </span>
+			<span style=" ">&nbsp; <a style="color:#1958BD;" href="http://www.expedia.com/">  Tickets</a></span></p>
+			</div>
+			
+			<p style="margin-left:19.3em; min-width: 100em; position:absolute; margin-top: 150.75em; color:#666666; font-family:Arial; font-size: 12px;"><span><a style="text-decoration:none; color:#666666;  "href="#">About lUis</a></span><span><a style="text-decoration:none; margin-left: 2.1em; color:#666666;  "href="#">Community</a></span><span><a style="text-decoration:none; color:#666666; margin-left:1.7em;  "href="#">Announcements</a></span><span><a style="text-decoration:none; color:#666666;  margin-left: 1.65em;"href="#">Security Center</a></span><span><a style="text-decoration:none; color:#666666; margin-left:1.7em; "href="#">Policies</a></span><span><a style="text-decoration:none; color:#666666; margin-left:1.6em;  "href="#">Site Map</a></span><span><a style="text-decoration:none; color:#666666; margin-left:1.7em;  "href="#">lUis official time</a></span><span><a style="text-decoration:none; color:#666666;  margin-left:2.1em; "href="#">Preview new features</a></span><span><a style="text-decoration:none; color:#666666; margin-left:1.65em;   "href="#">Contact us</a></span><span><a style="text-decoration:none; color:#666666; margin-left:1.7em;  "href="#">Tell us what you think</a></span></p>
+			
+			<p style="min-width:100em; position:absolute; font-family:Arial; font-size:11px; margin-top: 168.2em; margin-left: 21.1em;"><span>Luis Lavieri &#169; 2013 All Rights Reserved. </span><span><a style=" color:#666666;"href="#"><u>User Agreement</u></a></span> and <span><a style="text-decoration:none; color:#666666;"href="#"><u> Privacy Policy</u></a></span>. &nbsp;&nbsp;&nbsp; This Website was made for academic purposes and job search in June 2013 by Luis Lavieri. No copyright infringement intended.</p>
+			
+			<div id="stickyFooter" style='display:none; position:fixed; bottom:2.8em; right:-0.1em;  '><a href="#"><ul id="up"></ul></a></div>
+			
+		</div>
+		
+		
+		
+		
+			<!-- Modal -->
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="myModalLabel">A little bit about me:</h3>
+			</div>
+				<div class="modal-body">
+			<p>Hey! there, thank you for checking out my Website.</p> 
+			<p>Try playing around. There are many fancy scripts and hidden features. Don't forget to share it!</p>
+			<p>Down there, you are going to see my resume. There is all the info you need to contact me. :)</p>
+			<p>For a better experience, I recommend using <strong>Mozilla Firefox</strong> or <strong>Google Chrome</strong>. Those are the browsers that I used when I built the website.</p>
+			<p>UPDATE: Take a look at my last project: <a href="http://www.luislavieri.com/foodbuilder">Food Builder</a></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+			</div>
+		
+	
+		
+		
+	</div>
+	<!--Scripts-->
+	<script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+	<script type='text/javascript' src="shippingDates.js"></script>
+	<script type='text/javascript' src="events.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script language="javascript" src="shortener.js"></script>
+  </body>
+</html>
