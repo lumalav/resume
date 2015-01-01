@@ -6,8 +6,8 @@ the following technology:
 	
 <b>1) Bootstrap</b>
 
-2) JavaScript
+<b>2) JavaScript</b>
 
-3) PDF.JS by Mozilla
+<b>3) PDF.JS by Mozilla</b>
 
 Luis Lavieri
